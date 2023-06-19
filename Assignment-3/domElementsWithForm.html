@@ -1,0 +1,108 @@
+<!-- 9.JS DOM Working with Form Input:
+Implement a webpage with a form that has the following fields:
+a. Name (text input)
+b. Email (email input)
+c. Password (password input)
+d. Confirm Password (password input)
+e. Submit (button)
+Implement JavaScript validation for the form fields:
+f. Name should not be empty and should contain only letters.
+g. Email should be a valid email address.
+h. Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.
+i. Confirm Password should match the Password field.
+j. Display appropriate error messages for invalid fields. -->
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/Assignment-3/output.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="flex flex-col items-center justify-center lg:px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gray-200">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <form class="bg-white px-6 py-8 rounded shadow-md text-black w-full" onSubmit="submit()" method='post'>
+        <h1 class="mb-8 text-3xl text-center">Create Your Account</h1>
+        <input onblur="nameCheck()" id="fullName" type="text"
+          class="block border border-grey-light w-full p-3 rounded" placeholder="Full Name" />
+          <p id="error" class="text-sm text-red-600 font-small text-end mb-4"></p>
+
+
+        <input id="emailName" type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+          placeholder="Email" onblur="checkEmail()"/>
+        <p id="errorEmail" class="text-sm text-red-600 font-small text-end mb-4"></p>
+
+        <input id="password_1" type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+          name="password" placeholder="Password" onblur="checkPassword()"/>
+          <p id="errorPassword" class="text-sm text-red-600 font-small text-end mb-4"></p>
+
+        <input id="password_2" type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+          name="confirm_password" placeholder="Confirm Password" onblur="checkConfirmPassword()" />
+          <p id="errorConfirmPassword" class="text-sm text-red-600 font-small text-end mb-4"></p>
+
+        <button id="submitButton" type="submit"
+          class="w-full text-white bg-blue-600 hover:bg-blue-900 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function nameCheck() {
+      let idTag = document.getElementById("fullName");
+      let errorMessage = document.getElementById("error");
+      errorMessage.innerHTML = "";
+      let id = idTag.value.toString();
+      console.log("function called " + id);
+      if (id == "") {
+        errorMessage.innerHTML = "Please enter your name";
+      } else {
+        for (let a of id) {
+          if (parseInt(a) >= 0 && parseInt(a) < 9) {
+            errorMessage.innerHTML = "Please enter alphanumeric letters";
+            return;
+          }
+        }
+      }
+    }
+    function checkEmail(){
+      let id = document.getElementById("emailName");
+      let errorMessage = document.getElementById("errorEmail");
+      errorMessage.innerHTML = "";
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if(!id.value.match(validRegex)){
+          errorMessage.innerHTML = "Please enter valid Email";
+      }
+    }
+
+    function checkPassword(){
+      let id = document.getElementById("password_1");
+      let errorMessage = document.getElementById("errorPassword");
+      errorMessage.innerHTML = "";
+      var pass=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      console.log(id.value);
+      if(!id.value.match(pass)) {
+        errorMessage.innerHTML = "At least one uppercase letter, one lowercase letter, one digit and a minimum 8 characters";
+      }
+    }
+
+    function checkConfirmPassword(){
+      let id = document.getElementById("password_2").value;
+      console.log("function checkConfirmPassword "+id);
+      let errorMessage = document.getElementById("errorConfirmPassword");
+      errorMessage.innerHTML = "";
+      let pass = document.getElementById("password_1").value;
+      if(id != pass){
+        errorMessage.innerHTML = "Password is not Matched.";
+      }
+    }
+    function submit(){
+      console.log("Form submitted");
+    }
+  </script>
+</body>
+
+</html>

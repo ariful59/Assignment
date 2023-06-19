@@ -1,0 +1,45 @@
+<!-- 7.JS Common Events:
+Implement a webpage with the following functionality:
+a. When the user clicks anywhere on the page, display an alert with the coordinates (x, y) of the click.
+b. When the user presses any key on the keyboard, display an alert with the key code of the pressed key.
+c. When the user moves the mouse over an image, change the image source to another image of your choice. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Events</title>
+</head>
+
+<body>
+    <h1 id="t"></h1>
+    <img id="image" style="display: block;margin-left: auto; margin-right: auto; width: 50%;" src="image1.webp" />
+    <script>
+        // a. When the user clicks anywhere on the page, display an alert with the coordinates (x, y) of the click.
+        let t = document.getElementById("t");
+        document.addEventListener("click", (e) => {
+            t.innerHTML = `click x axis ${e.clientX} click y ${e.clientY}`;
+        });
+
+        // b. When the user presses any key on the keyboard, display an alert with the key code of the pressed key.
+        document.addEventListener("keypress", (e) => {
+            alert(`You have pressed key ${e.key}`);
+        });
+
+        // c. When the user moves the mouse over an image, change the image source to another image of your choice. -->
+        image.addEventListener('mouseover', function () {
+            image.src = "image2.webp";
+        })
+        image.addEventListener('mouseout', function () {
+            image.src = "image1.webp";
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!-- 14.AJAX Get Request:
+a. Implement a JavaScript function that sends an AJAX GET 
+request to the following URL: "https://api.example.com/data".-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Get Request</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const KELV = 273.15;
+        async function getData() {
+            let URL = "http://api.openweathermap.org/geo/1.0/direct?q=Dhaka&limit=5&appid=a3cf288c1e798cb25746658de08f2389"
+            //let URL = "https://api.example.com/data";
+            let res = await axios.get(URL);
+            if(res.status === 200) {
+                console.log("Successfully retrieved data");
+                let d = res.data[1];
+                let lat = d.lat;
+                let lon = d.lon;
+                let URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a3cf288c1e798cb25746658de08f2389`;
+                let res_1 = await axios.get(URL);
+                if(res_1.status === 200){
+                    console.log("Successfully retrieved data res_1");
+                    let t = res_1.data.main;
+                    console.log(t.temp - KELV);
+                } else {
+                    console.log("failed");
+                }
+            } else {
+                console.log("failed");
+            }
+        }
+        getData();
+    </script>
+
+</body>
+
+</html>

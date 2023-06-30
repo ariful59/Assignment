@@ -1,0 +1,43 @@
+<!-- 15.AJAX Post Request:
+a. Implement a JavaScript function that sends an AJAX POST request to the following 
+URL: "https://api.example.com/submit".
+b. Send a JSON payload with the following data: 
+{ "name": "John Doe", "email": "johndoe@example.com" }. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Post Request</title>
+    <link rel="stylesheet" href="/Assignment-3/output.css">
+</head>
+
+<body>
+    <div class="felx felx-col justify-center items-center mx-auto w-48 mt-12">
+        <button
+            class="w-full text-white bg-blue-600 hover:bg-blue-900 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            onClick="postRequest()">Send Post Request</button>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        async function postRequest() {
+            let URL = "https://api.example.com/submit";
+            let res = await axios.post(URL, {
+                name: 'John Doe',
+                email: 'johndoe@example.com',
+            });
+
+            if(res.status === 200){
+                alert('Success');
+            } else {
+                alert('something went wrong');
+            }
+        }
+    </script>
+</body>
+
+</html>

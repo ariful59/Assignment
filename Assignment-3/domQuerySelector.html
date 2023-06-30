@@ -1,0 +1,33 @@
+<!-- 13.DOM Query Selector:
+a. Create a webpage with multiple paragraphs containing different classes and IDs.
+b. Implement a JavaScript function that selects all paragraphs with a specific class 
+and changes their text color to red. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selector</title>
+</head>
+
+<body>
+    <div class="para">
+        <div id="id-1" class="para-1">Sunday</div>
+        <div id="id-2" class="para-2">Monday</div>
+        <div id="id-3" class="para-3">Tuesday</div>
+        <div id="id-4" class="para-4">Wednesday</div>
+        <div id="id-5" class="para-5">Thursday</div>
+        <div id="id-6" class="para-7">Friday</div>
+    </div>
+</body>
+<script>
+    document.querySelectorAll(".para").forEach((element) => {
+       element.style.color = "red"; 
+    });
+</script>
+
+</html>

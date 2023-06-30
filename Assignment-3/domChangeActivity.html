@@ -1,0 +1,28 @@
+<!-- 12.DOM Change Attribute Value:
+a. Create a webpage with an image element (<img>) that has an initial source URL.
+b. Implement a JavaScript function that changes the source URL of the image element when a button is clicked. Use a
+different image URL of your choice. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Change Attribute Value:</title>
+    <link href="/Assignment-3/output.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex flex-col item-center justify-center container bg-slate-200 mt-12 max-w-md px-2 shadow mx-auto">
+        <img id="image-1" class="object-center" src="https://images.freeimages.com/images/previews/1b8/the-forest-1642011.jpg"/>
+    </div>
+    <script>
+        let t = document.getElementById("image-1");
+        t.addEventListener("mouseover", () => {
+            if(t.src == 'https://images.freeimages.com/images/previews/1b8/the-forest-1642011.jpg')
+                t.src = "https://media.istockphoto.com/id/1370772148/photo/track-and-mountains-in-valle-del-lago-somiedo-nature-park-asturias-spain.webp?b=1&s=612x612&w=0&k=20&c=JUySgcyE6tBXBEFoVueFCMUlcPjc9oxUILInsbf1C-s="
+            else t.src = "https://images.freeimages.com/images/previews/1b8/the-forest-1642011.jpg"
+        });
+    </script>
+    </body>
+</html>

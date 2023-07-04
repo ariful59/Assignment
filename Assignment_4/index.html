@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <title>Online Shopping Center</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+      <a class="font-bold text-2xl lg:text-4xl" href="#">
+        Online Shopping Center
+      </a>
+      <div class="block lg:hidden">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:block">
+        <ul class="inline-flex">
+          <li>
+            <a class="px-4 font-bold" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="px-4 hover:text-gray-800" href="index.html">Products</a>
+          </li>
+          <li>
+            <a class="px-4 hover:text-gray-800" href="index.html">Shopping Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-white">
+        Choose your favorite products
+      </h2>
+      <h3 class="text-2xl mb-8 text-gray-200">
+        Buy More, Get More
+      </h3>
+      <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+        Order Now
+      </button>
+    </div>
+  </div>
+  <section class="container mx-auto px-6 p-10">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Product List
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3" id="productList">
+      <!-- <div
+        class="w-full max-w-sm ml-10 mt-2 mx-4 bg-gray-100 border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+          <img class="p-8 rounded-t-lg" src="https://flowbite.com/docs/images/products/apple-watch.png"
+            alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 5 GPS,
+              Aluminium Case, Starlight Sport</h5>
+          </a>
+          <div class="flex items-center mt-2.5 mb-5">
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">$199</span>
+            <a href="#"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+              to cart</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-full max-w-sm ml-10 mt-2 mx-4 bg-gray-100 border border-gray-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href="#">
+          <img class="p-8 rounded-t-lg" src="images/camera.png" alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 5 GPS,
+              Aluminium Case, Starlight Sport</h5>
+          </a>
+          <div class="flex items-center mt-2.5 mb-5">
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">$199</span>
+            <a href="#"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+              to cart</a>
+          </div>
+        </div>
+      </div>  -->
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 p-10">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Shopping Cart
+    </h2>
+    </section>
+
+  <section style="background-color: #667eea">
+    <div class="container mx-auto px-6 text-center py-20">
+      <h2 class="mb-6 text-4xl font-bold text-center text-white">
+        Limited in Stock
+      </h2>
+      <h3 class="my-4 text-2xl text-white">
+        Hurry UP!!!
+      </h3>
+      <button class="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider">
+        Pre Order
+      </button>
+    </div>
+  </section>
+  <!--Footer-->
+  <footer class="bg-gray-100">
+    <div class="container mx-auto px-6 pt-10 pb-6">
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/4 text-center md:text-left ">
+          <h5 class="uppercase mb-6 font-bold">Links</h5>
+          <ul class="mb-4">
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">FAQ</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Help</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Support</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/4 text-center md:text-left ">
+          <h5 class="uppercase mb-6 font-bold">Legal</h5>
+          <ul class="mb-4">
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Terms</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Privacy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/4 text-center md:text-left ">
+          <h5 class="uppercase mb-6 font-bold">Social</h5>
+          <ul class="mb-4">
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Facebook</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Linkedin</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Twitter</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/4 text-center md:text-left ">
+          <h5 class="uppercase mb-6 font-bold">Company</h5>
+          <ul class="mb-4">
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Official Blog</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
+            </li>
+            <li class="mt-2">
+              <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/app.js" type="module"></script>
+</body>
+
+</html>

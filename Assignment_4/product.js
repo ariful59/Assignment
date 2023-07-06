@@ -16,4 +16,4 @@ export const products = [{
     price: 8.99,
     description: 'Editorial, Arts & Culture, Photography',
     image: '/images/watch.png'
-} ];
+}];

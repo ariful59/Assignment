@@ -1,19 +1,22 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const Body = () => {
-    const [value, setValue] = useState("");
+    const [inputValue, setInputValue] = useState("");
 
-    const inputRef = useRef(null);
-    const handleOnClick = (event) => {
-        setValue(inputRef.current.value);
+    const handelOnChange = (event) => {
+
+        setInputValue(event.target.value);
+    }
+    const handleSubmit = (event) => {
+        setValue();
     }
     return (
         <div>
-            <div className="w-full max-w-xl">
-                <form className="bg-white shadow-md rounded pt-6 pb-8 mb-4">
+            <div className="flex flex-col justify-center items-center  w-full">
+                <form className="bg-gray-300 mx-auto  rounded pt-10 pb-10 pl-10 pr-10 mb-4">
                     <div className="mb-4">
-                        <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-4" id="username" type="text" placeholder="Add a task" />
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                        <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mx-4" id="username" type="text" placeholder="Add a task" value={inputValue} onChange={handelOnChange}/>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded" type="submit" onSubmit={handleSubmit}>
                             Add
                         </button>                    
                     </div>

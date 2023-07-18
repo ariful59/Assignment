@@ -21,6 +21,10 @@ const Body = () => {
                         </button>                    
                     </div>
                 </form>
+                <p className="bg-blue-600 text-bold text-3xl"> TODO List</p>
+                <ol className="list-disc">
+                   <li></li>     
+                </ol>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const TodoList = ({ todoItems, update }) => {
         update(todoItems.filter((item) => item.id != index));
     }
     function OnToggleItem(index) {
-        update(todoItems.map((item) => item.id === index ? { ...item, checked: item.checked } : item))
+        update(todoItems.map((item) => item.id === index ? { ...item, checked: !item.checked } : item))
     }
     return (
         <div className="bg-gray-400 max-w-sm mx-auto mt-2 flex flex-col shadow">

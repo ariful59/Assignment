@@ -16,9 +16,9 @@ const Body = () => {
     //     setTodoValue(inputValue);
     // }
     
-    function updateItems(inputValue){
+    function updateItems(t){
         console.log("Update");
-        setTodoValue((t) => [...t, inputValue]);
+        setTodoValue(t);
     }
 
     return (

@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import HomePage from './pages/HomePage'
-import ExpenseTransactions from './pages/expenseTransactions'
-import IncomeTransactions from './pages/incomeTransactions'
+import ExpenseTransactions from "./pages/ExpenseTransactions"
+import IncomeTransactions from "./pages/IncomeTransactions"
 
 
 function App() {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -10,6 +10,20 @@ const ExpenseTransactions = () => {
     const [inputValue, setInputValue] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
     const [itemList, setItemList] = useState([]);
+
+    useEffect(() => {
+        let flag = false;
+        itemList.map(() => {
+            flag = true;
+        })
+        if(flag) {
+            itemList.map(() => {
+            flag = true;
+        })}
+        else{
+            console.log(localStorage.getItem("expense"));
+        }
+    }, [itemList])
 
     const handleOnSubmit = (e) => {
         e.preventDefault();

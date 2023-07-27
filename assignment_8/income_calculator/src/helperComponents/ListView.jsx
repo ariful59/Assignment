@@ -1,5 +1,4 @@
 const ListView = ({ cartItem , remove}) => {
-    console.log("ListView");
     return (
         <div>
             <li>

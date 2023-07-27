@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import ListView from "../helperComponents/ListView";
+import ListViewheader from "../helperComponents/ListViewheader";
 
 const ExpenseTransactions = () => {
     const [date, setDate] = useState(new Date());
@@ -12,11 +13,16 @@ const ExpenseTransactions = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day = date.getDate();
-        const temp = {date: `date/month/year`, id: Date.now(), expense: selectedValue, value: inputValue}
-        setItemList((t)=>[...t, temp]);
+        if (inputValue === '' || selectedValue === '') {
+            alert('Please select a value');
+            return; 
+        }
+        let dateString = date.getDate() + '/' + date.getMonth() + 1 + '/' + date.getFullYear();
+        let temp = { date: dateString, type: selectedValue, value: inputValue };
+        setItemList((t) => [...t, temp]);
+    }
+    function removeFromItem(temp){
+        setItemList(itemList.filter(item => item.id!= temp));
     }
 
     return (
@@ -52,14 +58,21 @@ const ExpenseTransactions = () => {
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                 Amount
                             </label>
-                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="$$$" value={inputValue} onChange={(event)=>setInputValue(event.target.value)} />
+                            <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="number" placeholder="$$$" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
                         </div>
                         <button className="btn btn-primary md:w-1/4 w-full mb-6 mt-6 md:mb-0">Submit</button>
                     </div>
                 </form>
-                {
-                    <ListView dateValue = {date} expenseType = {selectedValue} inputValue = {inputValue}/>
+            </div>
+            <div>
+                <ListViewheader type={'Expense'}></ListViewheader>
+                <ol> {
+                    itemList.map((item, index) => 
+                        < ListView cartItem={item} key={index} remove={removeFromItem} />
+                    )
                 }
+                </ol>
+
             </div>
 
         </Layout>

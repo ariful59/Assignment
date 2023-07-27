@@ -1,41 +1,27 @@
-const ListView = ({ dateValue, expenseType, inputValue }) => {
-
+const ListView = ({ cartItem , remove}) => {
+    console.log("ListView");
     return (
         <div>
-            <div className="w-full md:max-w-md mb-2 mt-10 mx-auto">
-                <div className="bg-blue-400 ">
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Items List:</h2>
-                </div>
-                <div>
+            <li>
+                <div className="w-full md:max-w-md mb-2 mt-10 mx-auto">
                     <div className="flex flex-wrap mx-3 mb-2">
-                        <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                Select Date
-                            </label>
+                        <div className="w-1/4 px-3 mb-6 md:mb-0">
                             <div className="relative w-full md:max-w-sm ">
-                                Hello world
+                                {cartItem.date}
                             </div>
-
                         </div>
-                        <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                Type
-                            </label>
+                        <div className="w-1/4 px-3 mb-6 md:mb-0">
                             <div className="relative w-full md:max-w-sm">
-                                {expenseType}
+                                {cartItem.type}
                             </div>
                         </div>
-                        <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                Amount
-                            </label>
-                            {inputValue}
+                        <div className="w-1/4 px-3 mb-6 md:mb-0">
+                            {cartItem.value}
                         </div>
-                        <button className="btn btn-primary md:w-1/4 w-full mb-6 mt-6 md:mb-0">Delete</button>
+                        <button type="button" onClick={()=>remove(cartItem.id)} className="mx-auto mt-2 focus:outline-none text-white bg-white-500 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">❌</button>
                     </div>
                 </div>
-
-            </div>
+            </li>
         </div>
     );
 };

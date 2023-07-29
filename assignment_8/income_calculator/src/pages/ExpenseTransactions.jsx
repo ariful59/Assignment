@@ -12,31 +12,33 @@ const ExpenseTransactions = () => {
     const [itemList, setItemList] = useState([]);
 
     useEffect(() => {
-        let flag = false;
-        itemList.map(() => {
-            flag = true;
-        })
-        if(flag) {
-            itemList.map(() => {
-            flag = true;
-        })}
-        else{
-            console.log(localStorage.getItem("expense"));
+        if (localStorage.getItem('expense') !== null) {
+            const t = JSON.parse(localStorage.getItem('expense'));
+            setItemList(t);
         }
-    }, [itemList])
+    },[])
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (inputValue === '' || selectedValue === '') {
             alert('Please select a value');
-            return; 
+            return;
         }
         let dateString = date.getDate() + '/' + date.getMonth() + 1 + '/' + date.getFullYear();
-        let temp = { date: dateString, type: selectedValue, value: inputValue };
+        let temp = { date: dateString, type: selectedValue, value: inputValue, id: Date.now() };
         setItemList((t) => [...t, temp]);
+        setValueInLocalST([...itemList, temp]);
     }
-    function removeFromItem(temp){
-        setItemList(itemList.filter(item => item.id!= temp));
+    function removeFromItem(temp) {
+
+        const t = itemList.filter(item => item.id != temp);
+        setItemList(t);
+        setValueInLocalST(t);
+    }
+
+    function setValueInLocalST(item){
+        const t = JSON.stringify(item);
+        localStorage.setItem('expense', t);
     }
 
     return (
@@ -81,8 +83,8 @@ const ExpenseTransactions = () => {
             <div>
                 <ListViewheader type={'Expense'}></ListViewheader>
                 <ol> {
-                    itemList.map((item, index) => 
-                        < ListView cartItem={item} key={index} remove={removeFromItem} />
+                    itemList.map((item) =>
+                        < ListView cartItem={item} key={item.id} remove={removeFromItem} />
                     )
                 }
                 </ol>

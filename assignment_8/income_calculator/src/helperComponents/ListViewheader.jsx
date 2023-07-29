@@ -8,24 +8,24 @@ const ListViewheader = ({ type }) => {
                 <div>
                     <div className="flex flex-wrap mx-3 mb-2">
                         <div className="w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold">
                                 Date
                             </label>
 
                         </div>
                         <div className="w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase text-gray-700 text-xs font-bold mb-2">
+                            <label className="block uppercase text-gray-700 text-xs font-bold">
                                 {type} Type
                             </label>
                         </div>
                         <div className="w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold">
                                 Amount
                             </label>
                         </div>
                         <div className="w-1/4 px-3 mb-6 md:mb-0">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                Action
+                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold">
+                                Button
                             </label>
                         </div>
                     </div>

@@ -1,20 +1,20 @@
 import { useState } from "react";
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-const FormForIncome = ({addToItem}) => {
+const FormForIncome = ({ addToItem, type, dropDownMenu }) => {
     const [date, setDate] = useState(new Date());
     const [inputValue, setInputValue] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
 
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
         if (inputValue === '' || selectedValue === '') {
-            alert('Please select a value');
+            alert('Please select Income type or amount');
             return;
         }
         let dateString = date.getDate() + '/' + date.getMonth() + 1 + '/' + date.getFullYear();
-        const temp = { date: dateString, type: selectedValue, value: inputValue, id: Date.now()};
-        //console.log(dateString+"  "+ selectedValue +" "+ inputValue);
+        const temp = { date: dateString, type: selectedValue, value: inputValue, id: Date.now() };
         addToItem(temp);
     }
     return (
@@ -32,16 +32,22 @@ const FormForIncome = ({addToItem}) => {
                     </div>
                     <div className="w-full md:w-1/4 px-3 mb-6 md:mb-0">
                         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                            Income
+                            {type}
                         </label>
                         <div className="relative w-full md:max-w-sm">
                             <select className="select w-full md:max-w-xs" onChange={(event) => setSelectedValue(event.target.value)}>
-                                <option disabled selected>Income Source</option>
-                                <option>House Rent</option>
-                                <option>Food</option>
-                                <option>Transport</option>
-                                <option>Entertainment</option>
-                                <option>Other Expense</option>
+                                {
+                                    dropDownMenu?.map((menu) => {
+                                        console.log("hello from menu: " + menu);
+                                        <option >hello</option>
+                                        // if(index === 0){
+                                        //     {<option disabled selected>{menu}</option>}
+                                        // } else {
+
+                                        // }
+                                    })
+                                }
+
                             </select>
                         </div>
                     </div>

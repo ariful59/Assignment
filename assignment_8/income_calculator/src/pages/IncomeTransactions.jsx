@@ -6,10 +6,12 @@ import FormForIncome from "../helperComponents/FormForIncome";
 import { useEffect } from "react";
 
 const IncomeTransactions = () => {
+    const typeOfAction = "Income";
+    const incomeArray = ['Income Source', 'Salary', 'Freelancing', 'Business', 'Other Sources'];
 
     useEffect(() => {
-        if (localStorage.getItem('income') !== null) {
-            const t = JSON.parse(localStorage.getItem('income'));
+        if (localStorage.getItem(typeOfAction) !== null) {
+            const t = JSON.parse(localStorage.getItem(typeOfAction));
             setItemList(t);
         }
     },[])
@@ -26,17 +28,17 @@ const IncomeTransactions = () => {
     }
     function setValueInLocalST(item){
         const t = JSON.stringify(item);
-        localStorage.setItem('income', t);
+        localStorage.setItem(typeOfAction, t);
     }
     return (
         <Layout>
             <div>
-                <FormForIncome addToItem={addToItem}></FormForIncome>
+                <FormForIncome addToItem={addToItem} type={typeOfAction} dropDownMenu = {incomeArray}></FormForIncome>
             </div>
             <div>
-                <ListViewheader type={'Income'}></ListViewheader>
+                <ListViewheader type={typeOfAction}></ListViewheader>
                 <ol> {
-                    itemList.map((item, index) =><ListView cartItem={item} key={item.id} remove={removeFromItem}/>)
+                    itemList?.map((item) =><ListView cartItem={item} key={item.id} remove={removeFromItem}/>)
                 }
                 </ol>
             </div>

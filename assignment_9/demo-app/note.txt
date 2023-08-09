@@ -1,0 +1,10 @@
+app->layout -> main master layout or starting point for the application.
+app->page -> the main/home page of the application.
+public folder-> Static assets to be served (image, assets, etc)
+next.config.js->    Configuration file for Next.js
+package.json ->	    Project dependencies and scripts
+.eslintrc.json ->	Configuration file for ESLint
+.gitignore	->      Git files and folders to ignore
+jsconfig.json ->	Configuration file for JavaScript
+postcss.config.js-> Configuration file for Tailwind CSS
+

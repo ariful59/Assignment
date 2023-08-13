@@ -8,3 +8,28 @@ package.json ->	    Project dependencies and scripts
 jsconfig.json ->	Configuration file for JavaScript
 postcss.config.js-> Configuration file for Tailwind CSS
 
+
+Examples:
+.
+└── app/
+    ├── components/
+    │   └── Button/
+    │       └── Button.tsx
+    ├── home/
+    │   ├── TweetsList/
+    │   │   └── TweetsList.tsx
+    │   ├── Sidebar/
+    │   │   └── Sidebar.tsx
+    │   ├── page.tsx
+    │   └── useTweets.ts
+    ├── (auth)/
+    │   ├── useAuth.ts
+    │   ├── User.ts
+    │   ├── sign-up/
+    │   │   └── page.tsx
+    │   └── login/
+    │       └── page.tsx
+    ├── hooks/
+    │   └── useSomething.ts
+    └── utils/
+        └── makeThings.ts

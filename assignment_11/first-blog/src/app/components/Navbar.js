@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <div>
@@ -25,25 +27,25 @@ export default function Navbar() {
               className="menu menu-sm text-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
                 <a>Blog</a>
                 <ul className="p-2">
                   <li>
-                    <a>Technology</a>
+                    <Link href={"/blog"}>Technology</Link>
                   </li>
                   <li>
-                    <a>Fun Fact</a>
+                    <Link href={"/blog"}>Fun Fact</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a>About</a>
+                <Link href="/about">About</Link>
               </li>
             </ul>
           </div>
-          <img className="btn btn-ghost normal-case text-xl" src="images/favicon.ico" class="h-8 mr-3" alt="Flowbite Logo"/>
+          <img className="text-xl" src="images/favicon.ico" class="h-8 mr-3" alt="Logo"/>
         </div>
         <div className="navbar-center">
           <a className="btn btn-ghost normal-case text-xl">Md Ariful Amin</a>
@@ -51,23 +53,23 @@ export default function Navbar() {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li tabIndex={0}>
               <details>
                 <summary>Blog</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Technology</a>
+                    <Link href={"/blog"}>Technology</Link>
                   </li>
                   <li>
-                    <a>Fun Fact</a>
+                    <Link href={"/blog"}>Fun Fact</Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a>About</a>
+              <Link href={"/about"}>About</Link>
             </li>
           </ul>
         </div>

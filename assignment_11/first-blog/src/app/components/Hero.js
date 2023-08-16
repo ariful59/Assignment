@@ -2,7 +2,7 @@ const Hero = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-600">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row-reverse bg-blue-200">
                     <img src="/images/background.jpg" className="max-w-sm h-48 rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">Software Engineer!</h1>

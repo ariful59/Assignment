@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id" : "1",
+            "title" : "iPhone 9",
+            "content": "An apple mobile which is nothing like apple",
+            "date": "10/09/2013"
+        },
+        {
+            "id" : "2",
+            "title" : "iPhone 13",
+            "content": "A more andavced iPhone which is nothing like Apple",
+            "date": "10/09/2019"
+        },
+        {
+            "id" : "3",
+            "title" : "iPhone 14",
+            "content": "Awesome iPhone which is 14",
+            "date": "10/09/2021"
+        },
+        {
+            "id" : "4",
+            "title" : "iPhone 14 Pro Max",
+            "content": "Big iphone with a Pro",
+            "date": "10/09/2023"
+        }
+    ]
+}

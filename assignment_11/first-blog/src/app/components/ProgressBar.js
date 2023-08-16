@@ -1,12 +1,16 @@
 'use client'
-import NextNProgress from 'nextjs-progressbar';
-
-import React from 'react';
+import { PagesProgressBar } from 'next-nprogress-bar';
 
 const ProgressBar = () => {
+    console.log('progress bar initialized');
     return (
         <div>
-            <NextNProgress/>
+            <PagesProgressBar
+                height="10px"
+                color="#fffd00"
+                options={{ showSpinner: false }}
+                shallowRouting
+            />
         </div>
     );
 };

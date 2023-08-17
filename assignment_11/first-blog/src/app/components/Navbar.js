@@ -1,6 +1,10 @@
+'use client'
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+
 
 export default function Navbar() {
+  let currentPath = usePathname();
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -27,25 +31,25 @@ export default function Navbar() {
               className="menu menu-sm text-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link href="/">Home</Link>
+                <Link className={currentPath==='/' && "bg-blue-400"} href="/">Home</Link>
               </li>
               <li>
-                <a>Blog</a>
-                <ul className="p-2">
-                  <li>
-                    <Link href={"/blog"}>Technology</Link>
-                  </li>
-                  <li>
-                    <Link href={"/blog"}>Fun Fact</Link>
-                  </li>
-                </ul>
+                <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Blog</Link>
+                {/*<ul className="p-2">*/}
+                {/*  /!*<li>*!/*/}
+                {/*  /!*  <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Technology</Link>*!/*/}
+                {/*  /!*</li>*!/*/}
+                {/*  /!*<li>*!/*/}
+                {/*  /!*  <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Fun Fact</Link>*!/*/}
+                {/*  /!*</li>*!/*/}
+                {/*</ul>*/}
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link className={currentPath==='/about' && "bg-blue-400"} href="/about">About</Link>
               </li>
             </ul>
           </div>
-          <img className="text-xl" src="images/favicon.ico" class="h-8 mr-3" alt="Logo"/>
+          <img className="text-xl" src="/images/favicon.ico" class="h-8 mr-3" alt="Logo"/>
         </div>
         <div className="navbar-center">
           <a className="btn btn-ghost normal-case text-xl">Md Ariful Amin</a>
@@ -53,23 +57,22 @@ export default function Navbar() {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link href="/">Home</Link>
+              <Link className={currentPath==='/' && "bg-blue-400"} href="/">Home</Link>
             </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Blog</summary>
-                <ul className="p-2">
-                  <li>
-                    <Link href={"/blog"}>Technology</Link>
-                  </li>
-                  <li>
-                    <Link href={"/blog"}>Fun Fact</Link>
-                  </li>
-                </ul>
-              </details>
+            <li >
+                <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Blog</Link>
+                {/*<ul className="p-2">*/}
+                {/*  /!*<li>*!/*/}
+                {/*  /!*  <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Technology</Link>*!/*/}
+                {/*  /!*</li>*!/*/}
+                {/*  /!*<li>*!/*/}
+                {/*  /!*  <Link className={currentPath==='/blog' && "bg-blue-400"} href={"/blog"}>Fun Fact</Link>*!/*/}
+                {/*  /!*</li>*!/*/}
+                {/*</ul>*/}
+
             </li>
             <li>
-              <Link href={"/about"}>About</Link>
+              <Link className={currentPath==='/about' && "bg-blue-400"} href={"/about"}>About</Link>
             </li>
           </ul>
         </div>

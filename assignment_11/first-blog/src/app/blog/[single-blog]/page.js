@@ -2,7 +2,7 @@
 
 import {useEffect, useState} from "react";
 import axios from "axios";
-import CarView from "@/app/components/carView";
+import CartView from "@/app/components/cartView";
 
 export default function Page({ params }) {
     const [value, setValue] = useState(null);
@@ -11,7 +11,7 @@ export default function Page({ params }) {
             await axios.get('/data/blogData.json')
                 .then(res => {
                     const t = res.data['data'];
-                    const d = t.find((item)=>item['id']===params['post']);
+                    const d = t.find((item)=>item['id']===params['single-blog']);
                     setValue(d);
                 })
         })()
@@ -20,7 +20,7 @@ export default function Page({ params }) {
     return (
         <div>
             {
-                value && <CarView value = {value}/>
+                value && <CartView value = {value}/>
             }
         </div>
     );

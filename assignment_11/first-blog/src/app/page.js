@@ -1,10 +1,14 @@
 import Hero from "./components/Hero";
-
-
+import Service from "@/app/components/service";
+import PostCategory from "@/app/components/PostCategory";
 export default function Home() {
   return (
     <div>
-      <Hero></Hero>
+        <PostCategory/>
+        <Hero></Hero>
+        <Service/>
+
+
     </div>
   );
 }

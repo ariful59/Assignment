@@ -2,33 +2,30 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import getData from "@/app/components/API";
+import getData, {getNewestPost} from "@/app/components/API";
+import CartView from "@/app/components/cartView";
+import ProgressBar from "@/app/components/ProgressBar";
 
 export default function BlogPage() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     useEffect(() => {
         (async () => {
-            await axios.get('/data/blogData.json')
-                .then(res => {
-                    setData(res.data['data']);
-                })
+            let temp = await getNewestPost();
+            setData(temp);
         })()
     }, []);
 
     return (
-
-        <div className="flex flex-row mx-w-sm justify-center item-center bg-white">
-            <ul className="menu w-64 p-0 [&_li>*]:rounded-none">
+        <div className={"bg-gradient-to-r from-cyan-100 to-blue-100"}>
+            <div className="flex lg:flex-wrap flex flex-wrap-reverse mx-auto pt-5 pb-5 mx-w-sm justify-center item-center">
                 {
-                    data.map((item, index) => {
-                        return <li key={index}>
-                            <Link className="hover:bg-blue-600 pl-5 pt-5 pb-5 pr-5 mx-auto bg-gray-300 text-bold text-2xl mt-6 mb-6"
-                                  href={`/blog/${item['id']}`}>{item['title']}</Link>
-                        </li>
+                    data === null ? <ProgressBar/> : data.map((item, index) => {
+                        return (
+                            <Link key={index}  href={`/blog/${item['id']}`}><CartView value={item}/></Link>
+                        )
                     })
                 }
-            </ul>
+            </div>
         </div>
     );
 }
-

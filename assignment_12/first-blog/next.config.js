@@ -7,6 +7,9 @@ const nextConfig = {
 //         API_SECRET_KEY : 'key@123'
 //     },
 //     distDir: 'newBuild'
+    env:{
+        API_BASE_URL : "https://basic-blog.teamrabbil.com/api/"
+    }
 }
 
 

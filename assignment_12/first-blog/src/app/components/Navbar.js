@@ -56,7 +56,7 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <img className="text-2xl h-8 mr-3 w-24" src="/images/icon.png" alt="Logo"/>
+          <img className="text-2xl max-h-12 mr-3 w-20 border-2 border-cyan-200 z-51" src="/images/logo.png" alt="Logo"/>
         </div>
         <div className="hidden lg:flex lg:mx-auto lg:flex-row">
           <ul className="menu menu-horizontal text-xl font-semibold">

@@ -1,1 +1,1 @@
-https://ostad-batch-1-assignment-11.vercel.app/
+https://ostad-nextjs-assignment-12.vercel.app/

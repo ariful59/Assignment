@@ -2,9 +2,9 @@ import React from 'react';
 
 const Service = () => {
     return (
-        <div className={"bg-gradient-to-r from-cyan-100 to-blue-100"}>
-        <div className={"mt-10 mb-10 pb-8 bg-gradient-to-r from-cyan-300 to-blue-400 border-2 lg:mx-48 mx-auto px-8 item-center justify-center"}>
-            <h1 className={"pt-5 text-xl font-bold mx-auto pb-5"}>Browse help topics</h1>
+        <div className="bg-gradient-to-r from-cyan-100 to-blue-100">
+        <div className="pb-8 bg-gradient-to-r from-cyan-300 to-blue-300 px-10 lg:px-32">
+            <h1 className={"pt-5 text-xl font-bold pb-5 shadow-md"}>Browse help topics</h1>
             <div className="collapse collapse-arrow bg-gray-200">
                 <input type="radio" name="my-accordion-2" checked="checked" />
                 <div className="collapse-title text-xl font-medium">

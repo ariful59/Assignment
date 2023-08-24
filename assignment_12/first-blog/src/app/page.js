@@ -4,11 +4,10 @@ import PostCategory from "@/app/components/PostCategory";
 export default function Home() {
   return (
     <div>
+
         <PostCategory/>
-        <Hero></Hero>
+        <Hero/>
         <Service/>
-
-
     </div>
   );
 }

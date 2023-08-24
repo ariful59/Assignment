@@ -1,27 +1,24 @@
 'use client'
 
 import {useEffect, useState} from "react";
-import axios from "axios";
-import CartView from "@/app/components/cartView";
+import {getPostDetails} from "@/app/components/API";
+import PostDetails from "@/app/components/postDetails";
+import ProgressBar from "@/app/components/ProgressBar";
 
-export default function Page({ params }) {
+export default function Page({params}) {
     const [value, setValue] = useState(null);
+    const id = params['single-blog'];
     useEffect(() => {
         (async () => {
-            await axios.get('/data/blogData.json')
-                .then(res => {
-                    const t = res.data['data'];
-                    const d = t.find((item)=>item['id']===params['single-blog']);
-                    setValue(d);
-                })
+            let temp = await getPostDetails(id);
+            setValue(temp);
         })()
     }, []);
-
     return (
         <div>
-            {
-                value && <CartView value = {value}/>
-            }
+        {
+            value === null ? <ProgressBar/> : <PostDetails value={value}/>
+        }
         </div>
     );
 }

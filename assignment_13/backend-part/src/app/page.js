@@ -1,20 +1,24 @@
 'use client'
 import axios from "axios";
+import Link from "next/link";
 const Page = () => {
-    const URL =  "http://localhost:3000/api/cookies"
+    const URL =  "http://localhost:3000/api/"
     async function setData(){
-        let res = await axios.get(URL)
+        let extention = 'cookies'
+        let res = await axios.get(URL+extention)
         if(res.status === 200){
-            console.log(res.data['message']);
-            return res.data;
+            return alert("Success!!!")
         } else {
-            return [];
+            return alert("Fail!!")
         }
     }
     return (
         <div>
-            <div className="items-center justify-center mx-auto flex flex-grow">
-                <button onClick={setData} className="btn btn-primary">Set Cookies</button>
+
+            <div className="items-center justify-center mx-auto flex flex-col">
+                <button onClick={setData} className="btn btn-primary mt-10">Set Cookies</button>
+                <Link className="btn btn-secondary mt-10" href={'/display'}> Get Cookies</Link>
+
             </div>
         </div>
     );

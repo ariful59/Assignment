@@ -1,9 +1,19 @@
+'use client'
 import React from 'react';
+import PageUpperLayout from "@/app/components/pageUpperLayout";
+import {useRouter} from "next/navigation";
+import {useCookies} from "next-client-cookies";
+
 
 const Page = () => {
+    const router = useRouter()
+    const cookies = useCookies();
+    const cookie = cookies.get('token')
     return (
         <div>
-            <h1 className="text-5xl">This is Dashboard</h1>
+            {
+                cookie ? <PageUpperLayout/> : router.push('/login')
+            }
         </div>
     );
 };
